@@ -6,6 +6,7 @@ Wrapper for DNS recon tools to automatically fingerprint subdomain takeovers
 
 # Install
 `pip3 install -r requirements.txt`
+
 `chmod +x subfinder/subfinder`
 
 
