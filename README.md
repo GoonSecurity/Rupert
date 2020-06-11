@@ -4,6 +4,11 @@ Wrapper for DNS recon tools to automatically fingerprint subdomain takeovers
 ![Screenshot of Rupert CLI](https://i.imgur.com/y7FQIG2.png)
 
 
+# Install
+`pip3 install -r requirements.txt`
+`chmod +x subfinder/subfinder`
+
+
 # Usage
 > python3 rupert.py [domain] [flags]
 
@@ -20,6 +25,7 @@ Wrapper for DNS recon tools to automatically fingerprint subdomain takeovers
 
 -c [n], --cap [n]
 > Set a cap to how many subdomains Rupert will scan. If too many are enumerated, abort.
+
 
 # Resources
 * https://github.com/projectdiscovery/subfinder
