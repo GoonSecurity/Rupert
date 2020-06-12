@@ -19,7 +19,7 @@ Wrapper for DNS recon tools to automatically fingerprint subdomain takeovers
 > verbosity mode
 
 -f [FILE], --file [FILE]
-> Read list of from file into Rupert
+> Read list domains of from file into Rupert
 
 -s [n], --skip [n]
 > Number of lines to skip (if any) when reading from file
