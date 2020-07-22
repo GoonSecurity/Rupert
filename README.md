@@ -10,7 +10,7 @@ Wrapper for DNS recon tools to automatically fingerprint subdomain takeovers
 `chmod +x subfinder/subfinder`
 
 `tar -xvf subfinder/subfinder_2.3.8_linux_amd64.tar.gz -C subfinder`
-https://github.com/projectdiscovery/subfinder/releases/download/v2.3.8/subfinder_2.3.8_checksums.txt)
+(https://github.com/projectdiscovery/subfinder/releases/download/v2.3.8/subfinder_2.3.8_checksums.txt)
 
 
 # Usage
