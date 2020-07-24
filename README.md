@@ -7,10 +7,10 @@ Wrapper for DNS recon tools to automatically fingerprint subdomain takeovers
 # Install
 `pip3 install -r requirements.txt`
 
-`chmod +x subfinder/subfinder`
-
 `tar -xvf subfinder/subfinder_2.3.8_linux_amd64.tar.gz -C subfinder`
 (https://github.com/projectdiscovery/subfinder/releases/download/v2.3.8/subfinder_2.3.8_checksums.txt)
+
+`chmod +x subfinder/subfinder`
 
 
 # Usage
