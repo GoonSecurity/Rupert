@@ -24,6 +24,9 @@ Wrapper for DNS recon tools to automatically fingerprint subdomain takeovers
 -f [FILE], --file [FILE]
 > Read list of domains from file into Rupert
 
+-sf [FILE], --subfile [FILE]
+> Skip recon and read subdomains from file
+
 -s [n], --skip [n]
 > Number of lines to skip (if any) when reading from file
 
