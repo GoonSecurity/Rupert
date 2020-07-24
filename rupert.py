@@ -14,12 +14,14 @@ import modules.recon as recon
 
 
 domains = []
+subdomains = []
 cap = False
 
 #parse command line arguments
 parser = argparse.ArgumentParser()
 parser.add_argument('-v', '--verbose', default=False, action='store_true')
 parser.add_argument('-f', '--file', default=False)
+parser.add_argument('-sf', '--subfile', default=False)
 parser.add_argument('-s', '--skip', default=False)
 parser.add_argument('-c', '--cap', default=False)
 parser.add_argument('-reporting', '--reporting', default=False)
@@ -29,6 +31,8 @@ if args.verbose:
 	config.verbose = True
 if args.file:
 	config.from_file = args.file
+if args.subfile:
+	config.subfile = args.subfile
 if args.skip:
 	config.skip = args.skip
 if args.cap:
@@ -38,10 +42,57 @@ if args.reporting:
 
 
 
+
+
+
+#create HTTP links to try from list of subdomains
+def generate_http_services(unchecked_subdomains):
+	http_services = []
+
+
+    
+	#gather list of http services to check
+	for subdomain in unchecked_subdomains:
+
+		#probe default ports for HTTP services
+		http_services.append("http://" + subdomain)
+		http_services.append("https://" + subdomain)
+
+	return http_services
+
+
+
+
+def check_services_for_subdomain_takeovers(http_services):
+	#open resource pool to check services
+	p = Pool(processes=20)
+	result = p.map(analysis.is_yoinkable, http_services)
+	p.close()
+
+
+
+
+def turn_file_into_list(file):
+	lines = []
+
+	for line in open(config.subfile, "r").readlines():
+		lines.append(line.rstrip('\n').lower())
+
+	return lines
+
+
+
+
+#check subdomains directly from file
+if config.subfile:
+	subdomains = turn_file_into_list(config.subfile)
+	http_services = generate_http_services(subdomains)
+	check_services_for_subdomain_takeovers(http_services)
+
+
 #read domains from file
 if config.from_file:
-	for line in open(config.from_file, "r").readlines():
-		domains.append(line.rstrip('\n').lower())
+	domains = turn_file_into_list(config.from_file)
 
 
 
@@ -66,16 +117,7 @@ for domain in domains:
 	print('')
 
 
-
-	subdomains = []
-	http_services = []
-
-	#gather list of http services to check
-	for subdomain in unchecked_subdomains:
-
-		#probe default ports for HTTP services
-		http_services.append("http://" + subdomain)
-		http_services.append("https://" + subdomain)
+	http_services = generate_http_services(unchecked_subdomains)
 
 
 	#if services exceeds reasonable cap abort process
@@ -85,9 +127,5 @@ for domain in domains:
 			continue
 
 
-
-
-	#open resource pool to check services
-	p = Pool(processes=20)
-	result = p.map(analysis.is_yoinkable, http_services)
-	p.close()
+	check_services_for_subdomain_takeovers(http_services)
+	
