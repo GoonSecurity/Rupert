@@ -23,6 +23,8 @@
 		"Tumblr": "Whatever you were looking for doesn't currently exist at this address",
 		"Tilda": "Please renew your subscription",
 		"UserVoice": "This UserVoice subdomain is currently available!",
-		"Wordpress": "Do you want to register "
+		"Wordpress": "Do you want to register ",
+		"Netlify": "Looks like you've followed a broken link or entered a URL that doesn't exist on this site."
+		
 	}
 }
