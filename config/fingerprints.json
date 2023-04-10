@@ -1,10 +1,13 @@
 {
 	"subdomain_takeover_data": {
 		"AWS/S3": "The specified bucket does not exist",
+		"Agile CRM": "Sorry, this page is no longer available.",
+		"Airee.ru": "Ошибка 402. Сервис Айри.рф не оплачен",
+		"Anima": "The page you were looking for does not exist.",
 		"Bitbucket": "Repository not found",
-		"Campaign Monitor": "'Trying to access your account?'",
-		"Fastly": "Fastly error: unknown domain:",
-		"Feedpress": "The feed has not been found.",
+		"Campaign Monitor": "Trying to access your account?",
+		"Canny": "There is no such company. Did you enter the right URL?",
+		"Getresponse" : "With GetResponse Landing Pages, lead generation has never been easier",
 		"Ghost": "The thing you were looking for is no longer here, or never was",
 		"Github": "There isn't a Github Pages site here.",
 		"HatenaBlog": "404 Blog is not found",
@@ -17,14 +20,19 @@
 		"LaunchRock": "It looks like you may have taken a wrong turn somewhere. Don't worry...it happens to all of us.",
 		"Mashery": "Unrecognized domain",
 		"Pantheon": "404 error unknown site!",
+		"Pingdom": "Sorry, couldn't find the status page",
 		"Readme.io": "Project doesnt exist... yet!",
+		"Readthedocs": "The link you have followed or the URL that you entered does not exist."
 		"Shopify": "Sorry, this shop is currently unavailable.",
+		"Short.io": "Link does not exist",
+		"SmartJobBoard" : "This job board website is either expired or its domain name is invalid.",
 		"Surge.sh": "project not found",
 		"Tumblr": "Whatever you were looking for doesn't currently exist at this address",
 		"Tilda": "Please renew your subscription",
+		"Uberflip": "The URL you've accessed does not provide a hub.",
 		"UserVoice": "This UserVoice subdomain is currently available!",
 		"Wordpress": "Do you want to register ",
-		"Netlify": "Looks like you've followed a broken link or entered a URL that doesn't exist on this site."
+		"Worksites": "Hello! Sorry, but the website you're looking for doesn't exist."
 		
 	}
 }
